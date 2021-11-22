@@ -1,0 +1,34 @@
+Η βαση δημιουργηθηκε με τις παρακατω εντολες στο Kibana, και γεμισε με τον κωδικα
+create.py.Επιλεχθηκε ο τυπος ομοιοτητας BM25 συμφωνα με την εκφώνηση. 
+
+
+delete /movies
+delete /ratings
+
+PUT movies
+{
+  "settings": {
+    "number_of_shards": 4,
+    "index" : {
+        "similarity" : {
+          "default" : {
+            "type" : "BM25"
+          }
+        }
+    }
+  }
+}
+PUT ratings
+{
+  "settings": {
+    "number_of_shards": 4,
+    "index" : {
+        "similarity" : {
+          "default" : {
+            "type" : "BM25"
+          }
+        }
+    }
+  }
+}
+
