@@ -163,8 +163,8 @@ for id in range(len(titles)):
 
 
 #Split titles
-#So the titles are split in list of lists-compatable with
-#gensim-Word2Vec
+#So the titles are split in list of lists-compatable with gensim-Word2Vec
+
 i=0
 for string in titles:
     titles[i]=titles[i].split("',")
@@ -280,8 +280,8 @@ for line in result1['hits']['hits']:
         BM25table.append(line['_score'])
 
 
-        #get movie average score second
-
+       
+         #get movie average score second
         resultavg=es.search(index='ratings', body={
          "query": {
            "bool": {
